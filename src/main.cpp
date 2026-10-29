@@ -42,7 +42,7 @@ void setup()
   DriveMotors::begin(prizm);
   xbox.begin();
   Serial.println("Xbox BLE: hold the controller Pair button until the logo flashes.");
-  Serial.println("Center both sticks to arm. Left stick: move/strafe. Right stick X: turn. B stops.");
+  Serial.println("Center both sticks to arm. Left stick: forward/reverse and turn. Right stick X: strafe. B stops.");
 }
 
 void loop()
@@ -79,8 +79,8 @@ void loop()
   }
 
   const int forward = -stickPercent(xbox.xboxNotif.joyLVert);
-  const int strafe = stickPercent(xbox.xboxNotif.joyLHori);
-  const int turn = stickPercent(xbox.xboxNotif.joyRHori);
+  const int strafe = stickPercent(xbox.xboxNotif.joyRHori);
+  const int turn = stickPercent(xbox.xboxNotif.joyLHori);
   if (xbox.xboxNotif.btnB)
   {
     DriveMotors::stop(prizm);
@@ -90,7 +90,7 @@ void loop()
   if (!armed && forward == 0 && strafe == 0 && turn == 0)
   {
     armed = true;
-    Serial.println("Mecanum drive armed. Left stick: move/strafe. Right stick X: turn (maximum 100%).");
+    Serial.println("Mecanum drive armed. Left stick: forward/reverse and turn. Right stick X: strafe (maximum 100%).");
   }
   if (!armed)
   {

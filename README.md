@@ -43,9 +43,9 @@ Reference: https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_mec
    The robot scans automatically; no phone, USB cable, or Xbox receiver is needed.
    Disconnect the controller from a nearby console or computer if it reconnects there.
 5. Wait for `Xbox input ready.` Center both sticks to arm.
-6. Left stick up/down drives forward/reverse; left/right moves sideways.
-   Diagonal stick positions combine forward and sideways motion. Right stick
-   left/right turns the robot; its vertical axis is unused. Translation and
+6. Left stick up/down drives forward/reverse; left/right turns the robot.
+   Diagonal left-stick positions combine forward/reverse motion and turning.
+   Right stick left/right moves sideways; its vertical axis is unused. Translation and
    rotation can be combined. No RB button is required. Center both sticks to
    stop. B also stops and requires centering both sticks before driving resumes.
 
