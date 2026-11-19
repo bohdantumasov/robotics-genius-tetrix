@@ -49,12 +49,14 @@ Reference: https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_mec
    rotation can be combined. No RB button is required. Center both sticks to
    stop. B also stops and requires centering both sticks before driving resumes.
 
-Maximum power is 100%, set by `MAX_POWER` in `src/main.cpp`. Stick travel controls
+Maximum power is 80%, set by `MAX_POWER` in `src/main.cpp`. Stick travel controls
 power proportionally. Holding the stick keeps the current command active without
 requiring repeated input reports. A BLE disconnect stops the motors when reported
 by the Bluetooth stack and requires centering both sticks again after reconnecting.
 There is no 500 ms input-report timeout: report silence alone does not indicate
-a lost connection. Stopping sends zero power (coast). The green pixel indicates
+a lost connection. Each wheel brakes whenever its calculated power is zero,
+including stops and disconnects, using the PRIZM brake command (125).
+The green pixel indicates
 a connected controller with input received; red indicates input was lost.
 A successful build does not verify physical pairing or motor direction.
 

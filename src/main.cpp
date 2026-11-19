@@ -8,7 +8,7 @@ XboxSeriesXControllerESP32_asukiaaa::Core xbox;
 
 namespace
 {
-constexpr int MAX_POWER = 100;
+constexpr int MAX_POWER = 80;
 constexpr int DEAD_ZONE = 4000;
 constexpr uint32_t CONTROL_INTERVAL_MS = 20;
 bool armed = false;
@@ -90,7 +90,7 @@ void loop()
   if (!armed && forward == 0 && strafe == 0 && turn == 0)
   {
     armed = true;
-    Serial.println("Mecanum drive armed. Left stick: forward/reverse and turn. Right stick X: strafe (maximum 100%).");
+    Serial.println("Mecanum drive armed. Left stick: forward/reverse and turn. Right stick X: strafe (maximum 80%).");
   }
   if (!armed)
   {
