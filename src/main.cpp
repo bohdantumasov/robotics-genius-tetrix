@@ -42,7 +42,6 @@ void setup()
   DriveMotors::begin(prizm);
   xbox.begin();
   Serial.println("Xbox BLE: hold the controller Pair button until the logo flashes.");
-  Serial.println("Center both sticks to arm. Left stick: forward/reverse and turn. Right stick X: strafe. B stops.");
 }
 
 void loop()
